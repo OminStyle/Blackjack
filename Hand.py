@@ -1,7 +1,7 @@
 from Card import Card
 
 
-class Hand():
+class Hand(object):
     def __init__(self):
         self.cards = []
 
@@ -13,6 +13,10 @@ class Hand():
 
     def showHand(self):
         return cards
+
+    def printHand(self):
+        for card in self.cards:
+            print(str(card.getName()) + " of " + card.getSuit())
 
     def getValue(self):
         value = 0
@@ -27,7 +31,10 @@ class Hand():
             else:
                 value += card.getName()
         if numOfAce:
-            if value <= 10:
+            if value <= 11:
                 numOfAce -= 1
-                value += 10     # Originally added 1
+                value += 10     # Originally added 1 so 1 + 10 = 11
         return value
+
+    def resetHand(self):
+        self.cards = []

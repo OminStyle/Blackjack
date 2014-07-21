@@ -21,5 +21,9 @@ class HandTest(unittest.TestCase):
         hand.addToHand(Card('A', 'diamonds'))
         self.assertEquals(12, hand.getValue())
 
+    def test_resetHand(self):
+        self.hand.resetHand()
+        self.assertEquals(0, self.hand.numOfCards())
+
 if __name__ == '__main__':
     unittest.main()

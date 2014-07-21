@@ -4,10 +4,12 @@ import unittest
 
 class CardTest(unittest.TestCase):
     def test_standardCard(self):
-        card = Card('K', 'hearts')
-        self.assertEqual('K', card.getName())
-        self.assertEqual('hearts', card.getSuit())
-        self.assertEqual(10, card.getValue())
+        card1 = Card('K', 'hearts')
+        self.assertEqual('K', card1.getName())
+        self.assertEqual('hearts', card1.getSuit())
+        self.assertEqual(10, card1.getValue())
+        card2 = Card(2, 'spades')
+        self.assertEqual(2, card2.getValue())
 
     def test_badName(self):
         with self.assertRaises((NameError)):
